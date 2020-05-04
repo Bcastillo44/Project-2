@@ -73,8 +73,8 @@ warButton = addEventListener('click', warGame);               //warButton is one
               players[1] = players[1].concat(cardPile);       //concat - merging player 2's card into the card pile
             }
             else{
-              warmode(cardPile);
-              console.log("War!");
+              warmode(cardPile);                              //run war if each players card has drawn a tie
+              console.log("War!");                            // console logs a War instance
               console.log(card1,card2);
             }
               console.log(players);
@@ -104,23 +104,24 @@ warButton = addEventListener('click', warGame);               //warButton is one
           function buildDeck(){                               // Builds 52 cards 
             cards = [];                                       // clear out cards array
             for(s in suit){                                   //loop through all the "s" values in suit array
-              let suitNew = suit[s][0];                       //string
+              let suitNew = suit[s][0];                       //string that shows the first letter of each suit
               for(n in rank){                                 // loop through card ranks              
+                
                 let card = {                                  // --card object created--
-                  suit:suit[s],                               //information from suits
+                  suit:suit[s],                               //pulling information from suit with every value that has an (s)
                   num:rank[n],                                //num is the string of the rank array
-                  cardValue:parseInt(n) +2,                   //parseInt n into a usable number +2(2 players)
-                                                              //cardValue is the integer 
+                  cardValue:parseInt(n) +2,                   //parseInt n into a usable number +2 for two players(2 players)
+                                                              //cardValue is now the integer version of the card value
                 }               
-                cards.push(card);                             // pushing cards value into card object
+                cards.push(card);                             // loops through each suit and each card number, pushing cards value into card object
               }
             }
-            console.log(cards);                               //console logs cards being played by each player
+            console.log(cards);                               //console logs cards being played by each player in the deck
 
           }
 
           function dealCards(array){                          //loop through all value in cards array
-            for(i = 0; i < array.length; i++){                
+            for(i = 0; i < array.length; i++){                //deals ard to first and second player
               let m = i % 2;                                  //modulus: takes right-hand value and puts it into the left-hand value, gives remainder
               players[m].push(array[i]);                      //variable [m] is pushing cards array evenly between two people 
             }
@@ -136,7 +137,7 @@ warButton = addEventListener('click', warGame);               //warButton is one
               array[i] = array[ii];                           
               array[ii] = temp;                               //overwrite with temp storage
             }
-            // console.log(array);
+            console.log(array);                               //shows cards are shuffled
             return array;                                     //passing back array into the object
           }
           
