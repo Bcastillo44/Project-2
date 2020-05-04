@@ -137,7 +137,7 @@ warButton = addEventListener('click', warGame);               //warButton is one
               array[i] = array[ii];                           
               array[ii] = temp;                               //overwrite with temp storage
             }
-            console.log(array);                               //shows cards are shuffled
+            // console.log(array);                               //shows cards are shuffled
             return array;                                     //passing back array into the object
           }
           
