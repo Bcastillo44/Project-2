@@ -12,7 +12,7 @@ Click into web browser to play each hand. Each hand is logged into console, with
 
 ## Deployment website
 
-[Click to play!] ()
+[https://bcastillo44.github.io/War-Card-Game/]
 
 ## Version
 
