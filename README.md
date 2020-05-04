@@ -1,4 +1,4 @@
-# Project-2 Game of War
+# Game of War
 
 Create a Game of War Card Game!
 
